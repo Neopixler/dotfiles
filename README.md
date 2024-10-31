@@ -1,4 +1,8 @@
-# Vundle Installation and Plugin Management
+# Dotfiles Repository
+
+This repository is intended to share my dotfiles which I created during my learnings of Linux and the GNU tools.
+
+## Vundle Installation and Plugin Management
 
 Vundle is a plugin manager for Vim. To install Vundle, follow these steps:
 
@@ -33,7 +37,7 @@ Vundle is a plugin manager for Vim. To install Vundle, follow these steps:
    :PluginInstall
    ```
 
-# Using Autocommands
+## Using Autocommands
 
 Autocommands in Vim allow you to execute commands automatically in response to specific events. Here are some examples of how to use autocommands:
 
