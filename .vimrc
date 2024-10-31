@@ -49,7 +49,7 @@ set nu
 set nowrap
 set hlsearch
 
-" Letzten CHANGELOG.md Versionseintrag kopieren
+" Copy the last CHANGELOG.md entry
 let @a = '3yjPjjllDA'
 
 highlight HonorGroup ctermfg=magenta ctermbg=lightgreen
@@ -59,7 +59,6 @@ highlight InspireGroup ctermfg=magenta ctermbg=lightyellow
 highlight SuccessGroup ctermfg=magenta ctermbg=white
 highlight LearnGroup ctermfg=magenta ctermbg=white
 highlight TrustGroup ctermfg=magenta ctermbg=white
-highlight ShareGroup ctermfg=magenta ctermbg=lightgreen
 highlight ShareGroup ctermfg=magenta ctermbg=lightgreen
 highlight FulfillmentGroup ctermfg=magenta ctermbg=lightyellow
 highlight HappinessGroup ctermfg=magenta ctermbg=lightgreen
@@ -75,10 +74,10 @@ autocmd BufRead,BufNewFile *.tid syntax match FulfillmentGroup "\<[Ff]ulfillment
 autocmd BufRead,BufNewFile *.tid syntax match HappinessGroup "\<[Hh]appiness\>"
 autocmd BufRead,BufNewFile *.tid syntax match SuccessGroup "\<[Ss]uccess\w*\>"
 autocmd BufRead,BufNewFile *.tid syntax match LearnGroup "\<[Ll]earn\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match LearnGroup "\<[Tt]rust\w*\>"
+autocmd BufRead,BufNewFile *.tid syntax match TrustGroup "\<[Tt]rust\w*\>"
 autocmd BufRead,BufNewFile *.tid syntax match ShareGroup "\<[Ss]hare\>"
 
-" Ich mag es lieber wenn die akive Zeile nicht unterstrichen wird sondern farblich hervorgehoben wird.
+" I prefer the active line to be highlighted with color instead of being underlined.
 hi CursorLine cterm=NONE ctermfg=LightBlue ctermbg=NONE guibg=NONE guifg=NONE
 
 " Change Color when entering Insert Mode
