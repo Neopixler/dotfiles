@@ -43,42 +43,65 @@ Autocommands in Vim allow you to execute commands automatically in response to s
 
 1. Highlight specific words in files with a `.tid` extension:
    ```
-   autocmd BufRead,BufNewFile *.tid syntax match InnovationGroup "\<[Ii]nnovat\w*\>"
+   if has("autocmd")
+     autocmd BufRead,BufNewFile *.tid syntax match InnovationGroup "\<[Ii]nnovat\w*\>"
+     autocmd BufRead,BufNewFile *.tid syntax match MindfulGroup "\<[Mm]indful\w*\>"
+     autocmd BufRead,BufNewFile *.tid syntax match HonorGroup "\<[Hh]onor\>"
+     autocmd BufRead,BufNewFile *.tid syntax match ResponsibilityGroup "\<[Rr]esponsib\w*\>"
+     autocmd BufRead,BufNewFile *.tid syntax match CultureGroup "\<[Cc]ultur\w*\>"
+     autocmd BufRead,BufNewFile *.tid syntax match InspireGroup "\<[Ii]nspir\w*\>"
+     autocmd BufRead,BufNewFile *.tid syntax match FulfillmentGroup "\<[Ff]ulfillment\>"
+     autocmd BufRead,BufNewFile *.tid syntax match HappinessGroup "\<[Hh]appiness\>"
+     autocmd BufRead,BufNewFile *.tid syntax match SuccessGroup "\<[Ss]uccess\w*\>"
+     autocmd BufRead,BufNewFile *.tid syntax match LearnGroup "\<[Ll]earn\w*\>"
+     autocmd BufRead,BufNewFile *.tid syntax match TrustGroup "\<[Tt]rust\w*\>"
+     autocmd BufRead,BufNewFile *.tid syntax match ShareGroup "\<[Ss]hare\>"
+   endif
    ```
 
 2. Change the color of the cursor line when entering and leaving insert mode:
    ```
-   " Change Color when entering Insert Mode
-   autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
+   if has("autocmd")
+     " Change Color when entering Insert Mode
+     autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
 
-   " Revert Color to default when leaving Insert Mode
-   autocmd InsertLeave * highlight  CursorLine ctermfg=LightBlue
+     " Revert Color to default when leaving Insert Mode
+     autocmd InsertLeave * highlight  CursorLine ctermfg=LightBlue
+   endif
    ```
 
 3. Set UTF-8 as the default encoding for commit messages:
    ```
-   autocmd BufReadPre COMMIT_EDITMSG,MERGE_MSG,git-rebase-todo setlocal fileencodings=utf-8
+   if has("autocmd")
+     autocmd BufReadPre COMMIT_EDITMSG,MERGE_MSG,git-rebase-todo setlocal fileencodings=utf-8
+   endif
    ```
 
 4. Remember the positions in files with some git-specific exceptions:
    ```
-   autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$")
-     \           && &filetype !~# 'commit\|gitrebase'
-     \           && expand("%") !~ "ADD_EDIT.patch"
-     \           && expand("%") !~ "addp-hunk-edit.diff" |
-     \   exe "normal g`\"" |
-     \ endif
+   if has("autocmd")
+     autocmd BufReadPost *
+       \ if line("'\"") > 0 && line("'\"") <= line("$")
+       \           && &filetype !~# 'commit\|gitrebase'
+       \           && expand("%") !~ "ADD_EDIT.patch"
+       \           && expand("%") !~ "addp-hunk-edit.diff" |
+       \   exe "normal g`\"" |
+       \ endif
+   endif
    ```
 
 5. Set the filetype to `diff` for files with a `.patch` extension:
    ```
-   autocmd BufNewFile,BufRead *.patch set filetype=diff
+   if has("autocmd")
+     autocmd BufNewFile,BufRead *.patch set filetype=diff
+   endif
    ```
 
 6. Highlight trailing whitespace in diff files:
    ```
-   autocmd Filetype diff
-     \ highlight WhiteSpaceEOL ctermbg=red |
-     \ match WhiteSpaceEOL /\(^+.*\)\@<=\s\+$/
+   if has("autocmd")
+     autocmd Filetype diff
+       \ highlight WhiteSpaceEOL ctermbg=red |
+       \ match WhiteSpaceEOL /\(^+.*\)\@<=\s\+$/
+   endif
    ```

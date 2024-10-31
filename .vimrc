@@ -64,27 +64,9 @@ highlight FulfillmentGroup ctermfg=magenta ctermbg=lightyellow
 highlight HappinessGroup ctermfg=magenta ctermbg=lightgreen
 highlight MindfulGroup ctermfg=magenta ctermbg=lightgreen
 highlight InnovationGroup ctermfg=magenta ctermbg=lightyellow
-autocmd BufRead,BufNewFile *.tid syntax match InnovationGroup "\<[Ii]nnovat\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match MindfulGroup "\<[Mm]indful\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match HonorGroup "\<[Hh]onor\>"
-autocmd BufRead,BufNewFile *.tid syntax match ResponsibilityGroup "\<[Rr]esponsib\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match CultureGroup "\<[Cc]ultur\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match InspireGroup "\<[Ii]nspir\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match FulfillmentGroup "\<[Ff]ulfillment\>"
-autocmd BufRead,BufNewFile *.tid syntax match HappinessGroup "\<[Hh]appiness\>"
-autocmd BufRead,BufNewFile *.tid syntax match SuccessGroup "\<[Ss]uccess\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match LearnGroup "\<[Ll]earn\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match TrustGroup "\<[Tt]rust\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match ShareGroup "\<[Ss]hare\>"
 
 " I prefer the active line to be highlighted with color instead of being underlined.
 hi CursorLine cterm=NONE ctermfg=LightBlue ctermbg=NONE guibg=NONE guifg=NONE
-
-" Change Color when entering Insert Mode
-autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
-
-" Revert Color to default when leaving Insert Mode
-autocmd InsertLeave * highlight  CursorLine ctermfg=LightBlue
 
 if &term =~ 'xterm-256color'    " mintty identifies itself as xterm-compatible
   if &t_Co == 8
@@ -112,4 +94,24 @@ if has("autocmd")
       autocmd Filetype diff
       \ highlight WhiteSpaceEOL ctermbg=red |
       \ match WhiteSpaceEOL /\(^+.*\)\@<=\s\+$/
+
+    " Highlight specific words in files with a `.tid` extension
+    autocmd BufRead,BufNewFile *.tid syntax match InnovationGroup "\<[Ii]nnovat\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match MindfulGroup "\<[Mm]indful\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match HonorGroup "\<[Hh]onor\>"
+    autocmd BufRead,BufNewFile *.tid syntax match ResponsibilityGroup "\<[Rr]esponsib\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match CultureGroup "\<[Cc]ultur\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match InspireGroup "\<[Ii]nspir\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match FulfillmentGroup "\<[Ff]ulfillment\>"
+    autocmd BufRead,BufNewFile *.tid syntax match HappinessGroup "\<[Hh]appiness\>"
+    autocmd BufRead,BufNewFile *.tid syntax match SuccessGroup "\<[Ss]uccess\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match LearnGroup "\<[Ll]earn\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match TrustGroup "\<[Tt]rust\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match ShareGroup "\<[Ss]hare\>"
+
+    " Change Color when entering Insert Mode
+    autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
+
+    " Revert Color to default when leaving Insert Mode
+    autocmd InsertLeave * highlight  CursorLine ctermfg=LightBlue
 endif " has("autocmd")
