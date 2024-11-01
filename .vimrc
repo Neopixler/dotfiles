@@ -1,5 +1,6 @@
 " Setting some decent VIM settings for programming
 " This source file comes from git-for-windows build-extra repository (git-extra/vimrc)
+" https://github.com/git-for-windows/build-extra/blob/main/git-extra/vimrc
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -52,19 +53,6 @@ set hlsearch
 " Copy the last CHANGELOG.md entry
 let @a = '3yjPjjllDA'
 
-highlight HonorGroup ctermfg=magenta ctermbg=lightgreen
-highlight ResponsibilityGroup ctermfg=magenta ctermbg=lightgreen
-highlight CultureGroup ctermfg=magenta ctermbg=lightyellow
-highlight InspireGroup ctermfg=magenta ctermbg=lightyellow
-highlight SuccessGroup ctermfg=magenta ctermbg=white
-highlight LearnGroup ctermfg=magenta ctermbg=white
-highlight TrustGroup ctermfg=magenta ctermbg=white
-highlight ShareGroup ctermfg=magenta ctermbg=lightgreen
-highlight FulfillmentGroup ctermfg=magenta ctermbg=lightyellow
-highlight HappinessGroup ctermfg=magenta ctermbg=lightgreen
-highlight MindfulGroup ctermfg=magenta ctermbg=lightgreen
-highlight InnovationGroup ctermfg=magenta ctermbg=lightyellow
-
 " I prefer the active line to be highlighted with color instead of being underlined.
 hi CursorLine cterm=NONE ctermfg=LightBlue ctermbg=NONE guibg=NONE guifg=NONE
 
@@ -108,6 +96,19 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.tid syntax match LearnGroup "\<[Ll]earn\w*\>"
     autocmd BufRead,BufNewFile *.tid syntax match TrustGroup "\<[Tt]rust\w*\>"
     autocmd BufRead,BufNewFile *.tid syntax match ShareGroup "\<[Ss]hare\>"
+
+    highlight HonorGroup ctermfg=magenta ctermbg=lightgreen
+    highlight ResponsibilityGroup ctermfg=magenta ctermbg=lightgreen
+    highlight CultureGroup ctermfg=magenta ctermbg=lightyellow
+    highlight InspireGroup ctermfg=magenta ctermbg=lightyellow
+    highlight SuccessGroup ctermfg=magenta ctermbg=white
+    highlight LearnGroup ctermfg=magenta ctermbg=white
+    highlight TrustGroup ctermfg=magenta ctermbg=white
+    highlight ShareGroup ctermfg=magenta ctermbg=lightgreen
+    highlight FulfillmentGroup ctermfg=magenta ctermbg=lightyellow
+    highlight HappinessGroup ctermfg=magenta ctermbg=lightgreen
+    highlight MindfulGroup ctermfg=magenta ctermbg=lightgreen
+    highlight InnovationGroup ctermfg=magenta ctermbg=lightyellow
 
     " Change Color when entering Insert Mode
     autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
