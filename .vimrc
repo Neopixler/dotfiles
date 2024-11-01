@@ -1,5 +1,6 @@
 " Setting some decent VIM settings for programming
 " This source file comes from git-for-windows build-extra repository (git-extra/vimrc)
+" https://github.com/git-for-windows/build-extra/blob/main/git-extra/vimrc
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -52,39 +53,8 @@ set hlsearch
 " Copy the last CHANGELOG.md entry
 let @a = '3yjPjjllDA'
 
-highlight HonorGroup ctermfg=magenta ctermbg=lightgreen
-highlight ResponsibilityGroup ctermfg=magenta ctermbg=lightgreen
-highlight CultureGroup ctermfg=magenta ctermbg=lightyellow
-highlight InspireGroup ctermfg=magenta ctermbg=lightyellow
-highlight SuccessGroup ctermfg=magenta ctermbg=white
-highlight LearnGroup ctermfg=magenta ctermbg=white
-highlight TrustGroup ctermfg=magenta ctermbg=white
-highlight ShareGroup ctermfg=magenta ctermbg=lightgreen
-highlight FulfillmentGroup ctermfg=magenta ctermbg=lightyellow
-highlight HappinessGroup ctermfg=magenta ctermbg=lightgreen
-highlight MindfulGroup ctermfg=magenta ctermbg=lightgreen
-highlight InnovationGroup ctermfg=magenta ctermbg=lightyellow
-autocmd BufRead,BufNewFile *.tid syntax match InnovationGroup "\<[Ii]nnovat\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match MindfulGroup "\<[Mm]indful\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match HonorGroup "\<[Hh]onor\>"
-autocmd BufRead,BufNewFile *.tid syntax match ResponsibilityGroup "\<[Rr]esponsib\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match CultureGroup "\<[Cc]ultur\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match InspireGroup "\<[Ii]nspir\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match FulfillmentGroup "\<[Ff]ulfillment\>"
-autocmd BufRead,BufNewFile *.tid syntax match HappinessGroup "\<[Hh]appiness\>"
-autocmd BufRead,BufNewFile *.tid syntax match SuccessGroup "\<[Ss]uccess\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match LearnGroup "\<[Ll]earn\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match TrustGroup "\<[Tt]rust\w*\>"
-autocmd BufRead,BufNewFile *.tid syntax match ShareGroup "\<[Ss]hare\>"
-
 " I prefer the active line to be highlighted with color instead of being underlined.
 hi CursorLine cterm=NONE ctermfg=LightBlue ctermbg=NONE guibg=NONE guifg=NONE
-
-" Change Color when entering Insert Mode
-autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
-
-" Revert Color to default when leaving Insert Mode
-autocmd InsertLeave * highlight  CursorLine ctermfg=LightBlue
 
 if &term =~ 'xterm-256color'    " mintty identifies itself as xterm-compatible
   if &t_Co == 8
@@ -112,4 +82,37 @@ if has("autocmd")
       autocmd Filetype diff
       \ highlight WhiteSpaceEOL ctermbg=red |
       \ match WhiteSpaceEOL /\(^+.*\)\@<=\s\+$/
+
+    " Highlight specific words in files with a `.tid` extension
+    autocmd BufRead,BufNewFile *.tid syntax match InnovationGroup "\<[Ii]nnovat\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match MindfulGroup "\<[Mm]indful\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match HonorGroup "\<[Hh]onor\>"
+    autocmd BufRead,BufNewFile *.tid syntax match ResponsibilityGroup "\<[Rr]esponsib\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match CultureGroup "\<[Cc]ultur\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match InspireGroup "\<[Ii]nspir\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match FulfillmentGroup "\<[Ff]ulfillment\>"
+    autocmd BufRead,BufNewFile *.tid syntax match HappinessGroup "\<[Hh]appiness\>"
+    autocmd BufRead,BufNewFile *.tid syntax match SuccessGroup "\<[Ss]uccess\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match LearnGroup "\<[Ll]earn\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match TrustGroup "\<[Tt]rust\w*\>"
+    autocmd BufRead,BufNewFile *.tid syntax match ShareGroup "\<[Ss]hare\>"
+
+    highlight HonorGroup ctermfg=magenta ctermbg=lightgreen
+    highlight ResponsibilityGroup ctermfg=magenta ctermbg=lightgreen
+    highlight CultureGroup ctermfg=magenta ctermbg=lightyellow
+    highlight InspireGroup ctermfg=magenta ctermbg=lightyellow
+    highlight SuccessGroup ctermfg=magenta ctermbg=white
+    highlight LearnGroup ctermfg=magenta ctermbg=white
+    highlight TrustGroup ctermfg=magenta ctermbg=white
+    highlight ShareGroup ctermfg=magenta ctermbg=lightgreen
+    highlight FulfillmentGroup ctermfg=magenta ctermbg=lightyellow
+    highlight HappinessGroup ctermfg=magenta ctermbg=lightgreen
+    highlight MindfulGroup ctermfg=magenta ctermbg=lightgreen
+    highlight InnovationGroup ctermfg=magenta ctermbg=lightyellow
+
+    " Change Color when entering Insert Mode
+    autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
+
+    " Revert Color to default when leaving Insert Mode
+    autocmd InsertLeave * highlight  CursorLine ctermfg=LightBlue
 endif " has("autocmd")
