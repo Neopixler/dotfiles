@@ -2,22 +2,24 @@
 " This source file comes from git-for-windows build-extra repository (git-extra/vimrc)
 " https://github.com/git-for-windows/build-extra/blob/main/git-extra/vimrc
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              " be iMproved
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
+" let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'preservim/nerdtree'
-Plugin 'tpope/vim-fugitive'  " A popular Git plugin
+Plugin 'preservim/nerdtree'         " A tree explorer plugin for vim at https://github.com/preservim/nerdtree
+Plugin 'tpope/vim-fugitive'         " A popular Git plugin at https://github.com/tpope/vim-fugitive
 Plugin 'Konfekt/vim-wsl-copy-paste' " mappings in Vim under WSL to write and read on the Microsoft Windows clipboard
+Plugin 'godlygeek/tabular'          " Provides commands to line up text
+Plugin 'preservim/vim-markdown'     " A feature-rich plugin for Markdown syntax highlighting and editing.
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
+filetype plugin indent on
 
 ru! defaults.vim                " Use Enhanced Vim defaults
 set mouse=                      " Reset the mouse setting from defaults
