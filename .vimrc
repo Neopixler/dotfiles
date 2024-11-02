@@ -117,4 +117,9 @@ if has("autocmd")
 
     " Revert Color to default when leaving Insert Mode
     autocmd InsertLeave * highlight  CursorLine ctermfg=LightBlue
+
+    " Enable wrap mode for markdown files
+    autocmd FileType markdown setlocal wrap
+    " Enable wrap mode for *.tid files
+    autocmd BufRead,BufNewFile *.tid setlocal wrap
 endif " has("autocmd")
