@@ -77,9 +77,9 @@ if has("autocmd")
       \   exe "normal g`\"" |
       \ endif
 
-      autocmd BufNewFile,BufRead *.patch set filetype=diff
+    autocmd BufNewFile,BufRead *.patch set filetype=diff
 
-      autocmd Filetype diff
+    autocmd Filetype diff
       \ highlight WhiteSpaceEOL ctermbg=red |
       \ match WhiteSpaceEOL /\(^+.*\)\@<=\s\+$/
 
