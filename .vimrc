@@ -99,18 +99,18 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.tid syntax match TrustGroup "\<[Tt]rust\w*\>"
     autocmd BufRead,BufNewFile *.tid syntax match ShareGroup "\<[Ss]hare\>"
 
-    highlight HonorGroup ctermfg=magenta ctermbg=lightgreen
-    highlight ResponsibilityGroup ctermfg=magenta ctermbg=lightgreen
+    highlight HonorGroup ctermfg=black ctermbg=lightblue
+    highlight ResponsibilityGroup ctermfg=black ctermbg=green
     highlight CultureGroup ctermfg=magenta ctermbg=lightyellow
-    highlight InspireGroup ctermfg=magenta ctermbg=lightyellow
-    highlight SuccessGroup ctermfg=magenta ctermbg=white
-    highlight LearnGroup ctermfg=magenta ctermbg=white
-    highlight TrustGroup ctermfg=magenta ctermbg=white
-    highlight ShareGroup ctermfg=magenta ctermbg=lightgreen
-    highlight FulfillmentGroup ctermfg=magenta ctermbg=lightyellow
-    highlight HappinessGroup ctermfg=magenta ctermbg=lightgreen
+    highlight InspireGroup ctermfg=white ctermbg=red
+    highlight SuccessGroup ctermfg=black ctermbg=lightmagenta
+    highlight LearnGroup ctermfg=white ctermbg=cyan
+    highlight TrustGroup ctermfg=black ctermbg=white
+    highlight ShareGroup ctermfg=black ctermbg=lightred
+    highlight FulfillmentGroup ctermfg=white ctermbg=magenta
+    highlight HappinessGroup ctermfg=white ctermbg=blue
     highlight MindfulGroup ctermfg=magenta ctermbg=lightgreen
-    highlight InnovationGroup ctermfg=magenta ctermbg=lightyellow
+    highlight InnovationGroup ctermfg=black ctermbg=yellow
 
     " Change Color when entering Insert Mode
     autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
