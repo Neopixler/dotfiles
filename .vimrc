@@ -104,11 +104,11 @@ if has("autocmd")
     highlight CultureGroup ctermfg=magenta ctermbg=lightyellow
     highlight InspireGroup ctermfg=white ctermbg=red
     highlight SuccessGroup ctermfg=black ctermbg=lightmagenta
-    highlight LearnGroup ctermfg=white ctermbg=cyan
+    highlight LearnGroup ctermfg=black ctermbg=lightcyan
     highlight TrustGroup ctermfg=black ctermbg=white
     highlight ShareGroup ctermfg=black ctermbg=lightred
     highlight FulfillmentGroup ctermfg=white ctermbg=magenta
-    highlight HappinessGroup ctermfg=white ctermbg=blue
+    highlight HappinessGroup ctermfg=black ctermbg=lightblue
     highlight MindfulGroup ctermfg=magenta ctermbg=lightgreen
     highlight InnovationGroup ctermfg=black ctermbg=yellow
 
