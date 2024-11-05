@@ -110,7 +110,7 @@ if has("autocmd")
     highlight FulfillmentGroup ctermfg=white ctermbg=magenta
     highlight HappinessGroup ctermfg=black ctermbg=lightblue
     highlight MindfulGroup ctermfg=magenta ctermbg=lightgreen
-    highlight InnovationGroup ctermfg=black ctermbg=yellow
+    highlight InnovationGroup ctermfg=black ctermbg=lightyellow
 
     " Change Color when entering Insert Mode
     autocmd InsertEnter * highlight  CursorLine ctermfg=NONE
